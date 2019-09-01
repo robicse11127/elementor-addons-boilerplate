@@ -61,11 +61,7 @@ module.exports = function( grunt ) {
             my_target: {
                 files: {
                     '<%= dirs.dist %>/js/public.min.js': [
-                        '<%= dirs.source %>/js/slick.min.js',
                         '<%= dirs.source %>/js/public.js',
-                    ],
-                    '<%= dirs.dist %>/js/admin.min.js': [
-                        '<%= dirs.source %>/js/image-uploader.js',
                     ],
                 }
             }
