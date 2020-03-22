@@ -1,8 +1,6 @@
 <?php
 namespace Elementor;
 
-if ( ! defined( 'ABSPATH' ) ) exit; // If this file is called directly, abort.
-
 class Widget_Prefix_Name extends Widget_Base {
 
 	public function get_name() {
