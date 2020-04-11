@@ -39,19 +39,6 @@ module.exports = function( grunt ) {
             }
         },
 
-        // Babel: Converts ES6/ES7 into plain JS
-        babel: {
-            options: {
-                sourceMap: false,
-                presets: [ 'env' ],
-            },
-            dist: {
-                files: {
-                    '<%= dirs.dist %>/js/public.min.js': '<%= dirs.source %>/js/*.js',
-                }
-            }
-        },
-
         // Minify all js files
         uglify: {
             options: {
@@ -158,7 +145,6 @@ module.exports = function( grunt ) {
     grunt.loadNpmTasks( 'grunt-contrib-compress' );
     grunt.loadNpmTasks( 'grunt-sass' );
     grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
-    grunt.loadNpmTasks( 'grunt-babel' );
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks('grunt-watcher');
 
