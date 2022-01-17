@@ -1,4 +1,5 @@
 'use strict';
+const sass = require('node-sass');
 module.exports = function( grunt ) {
     var pkg = grunt.file.readJSON( 'package.json' );
     grunt.initConfig({
@@ -12,8 +13,9 @@ module.exports = function( grunt ) {
         // Compile all .sass files.
         sass: {
             options: {
+                implementation: sass,
                 sourceMap: true,
-                style: 'expanded'
+                style: 'expanded',
             },
             dist: {
                 files: {
@@ -148,8 +150,9 @@ module.exports = function( grunt ) {
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks('grunt-watcher');
 
+    // Run default grunt.
     grunt.registerTask( 'default', [
-        'sass', 'minifycss', 'minifyjs', 'watcher'
+        'clean', 'sass', 'minifycss', 'minifyjs', 'watcher'
     ]);
 
     grunt.registerTask( 'minifycss', [
